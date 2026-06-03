@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.YOUR_USERNAME.journal-digest</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <!-- Path to your Python binary — find with: which python3 or which python -->
+    <string>/usr/bin/python3</string>
+    <!-- Absolute path to run_gather.py -->
+    <string>/Users/YOUR_USERNAME/path/to/journal-digest/run_gather.py</string>
+  </array>
+
+  <!-- Run every Sunday at 7:00 AM -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key><integer>0</integer>
+    <key>Hour</key><integer>7</integer>
+    <key>Minute</key><integer>0</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/YOUR_USERNAME/path/to/journal-digest/logs/run.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/YOUR_USERNAME/path/to/journal-digest/logs/run.log</string>
+
+  <!-- Do not run immediately on load -->
+  <key>RunAtLoad</key>
+  <false/>
+</dict>
+</plist>

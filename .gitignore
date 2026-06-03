@@ -1,0 +1,7 @@
+digests/
+logs/
+seen_articles.json
+__pycache__/
+*.pyc
+*.pyo
+.env
