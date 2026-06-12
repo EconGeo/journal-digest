@@ -105,13 +105,22 @@ After Tier 1 produces a raw digest, open Claude Code in this directory and paste
 ```
 Read digests/YYYY-MM-DD_raw.md and analyze it:
 1. For each HIGH PRIORITY article, write a 2-3 sentence triage summary
-2. Flag connections to my prior work (see MY_PUBLICATIONS in config.py)
-3. Propose 3-5 research gap ideas targeting [your target journals]
+2. For each article, extract the dataset(s) and key variables/measures used
+   (from the abstract/methods), plus geographic unit and time span if stated
+3. Flag connections to my prior work (see MY_PUBLICATIONS in config.py)
+4. Propose 3-5 research gap ideas targeting [your target journals]
 Write the analysis to digests/YYYY-MM-DD_digest.md
 Append new ideas to ideas.md under a dated header
 ```
 
 Claude Code will cross-reference your Zotero library (via MCP or SQLite fallback) to find connections.
+
+**Why extract datasets + variables (step 2):** recording the data each paper uses
+turns the digest into a *data-discovery* index. When you later file these into an
+Obsidian vault (datasets as `[[wikilinks]]`), each dataset becomes a hub that backlinks
+every paper using it — so when you start a project needing data on a topic, you can see
+at a glance what's already been used and where to get it. See the Obsidian section of
+the [research-claude README](https://github.com/EconGeo/research-claude#optional--obsidian-knowledge-base-journal-digest--checkpoint).
 
 ### Zotero integration
 
