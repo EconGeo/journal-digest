@@ -54,6 +54,7 @@ def _render_article(article: Article) -> str:
 - **In Zotero:** {_zotero_label(article)}
 - **Keywords matched:** {kw_str}
 - **Abstract:** {_abstract_text(article)}
+- **Data** *(Tier-2 fills from abstract/methods; leave arrays empty if none stated)*: `{{"datasets": [], "variables": [], "unit": "", "timespan": "", "access": ""}}`
 """
 
 
@@ -92,9 +93,9 @@ def write_raw_digest(
         "Claude Code will: (1) call Corbis `search_papers` on each HIGH PRIORITY article topic",
         "to surface related literature; (2) call `top_cited_articles` on REE/JREFE for the",
         "dominant topic(s) to establish citation benchmarks; (3) generate triage summaries;",
-        "(4) flag connections to your prior work; (5) extract the dataset(s) and key variables",
-        "used in each article (for data discovery and Obsidian crosslinking); (6) propose",
-        "research gap ideas.",
+        "(4) flag connections to your prior work; (5) fill the `Data` JSON field under each",
+        "article (datasets, variables, unit, timespan, access) from the abstract/methods —",
+        "this powers data discovery and Obsidian crosslinking; (6) propose research gap ideas.",
         f"Output goes to `{today}_digest.md` and `ideas.md`.",
         "",
         "---",
